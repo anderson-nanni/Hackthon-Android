@@ -35,9 +35,13 @@ public class BuscaApi extends AsyncTask<String, Void, ArrayList<Produtos>> {
                     JSONObject jo = ja.getJSONObject(i);
 
                     Produtos produtos = new Produtos();
-                    produtos.codigo = jo.getInt("cod");
+                    produtos.produtoId = jo.getInt("id");
                     produtos.produto = jo.getString("produto");
-                    produtos.foto = jo.getString("foto");
+                    produtos.categoriaId = jo.getString("categoriaId");
+                    produtos.descricao = jo.getString("descricao");
+                    produtos.base64 = jo.getString("base64");
+                    produtos.valor = jo.getString("valor");
+                    produtos.empresaId = jo.getString("empresaId");
 
                     listaRetorno.add(produtos);
                 }
